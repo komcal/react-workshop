@@ -8,6 +8,24 @@ class Content extends Component {
       name: 'no one.',
     }
   }
+  componentDidMount = () => {
+    this.setState({
+      count: 1
+    })
+  }
+  shouldComponentUpdate = (nextProps, nextState) => {
+    if(nextState.count < 0) {
+      return false;
+    }
+    return true;
+  }
+  componentDidUpdate = (prevProps, prevState) => {
+    if(prevState.count % 3 === 0) {
+      this.setState({
+        count: this.state.count + 1,
+      })
+    }
+  }
   increase() {
     this.setState({
       count: this.state.count + 1,
