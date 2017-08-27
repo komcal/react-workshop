@@ -7,7 +7,7 @@ class Header extends Component {
     return (
       <div className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Title />
+        <Title text="Hello from props" />
       </div>
     );
   }
